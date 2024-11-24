@@ -1,4 +1,6 @@
 package edu.rut.web.dto;
 
-public record HomeViewModel() {
+public record HomeViewModel(
+		BaseViewModel model
+) {
 }

@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Контроллер домашней страницы
  */
-@RequestMapping(path = "/")
+@RequestMapping(path = "api/v1")
 public interface HomeController extends BaseController {
 
 	/**
 	 * Отображение домашней страницы
 	 */
-	@GetMapping()
+	@GetMapping("/")
 	String index(Model model);
 }

@@ -1,4 +1,6 @@
 package edu.rut.web.dto;
 
-public record BaseViewModel() {
+public record BaseViewModel(
+		String title
+) {
 }

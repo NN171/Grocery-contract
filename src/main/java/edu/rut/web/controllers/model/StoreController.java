@@ -2,6 +2,7 @@ package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.StoreViewModel;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,17 +11,25 @@ import java.util.List;
 public interface StoreController extends BaseController {
 
     @GetMapping("/")
-    StoreViewModel getStores();
+    String getStores(@ModelAttribute StoreViewModel viewModel,
+                     Model model);
 
-    @GetMapping("/store/")
-    StoreViewModel getStore(Long id);
+    @GetMapping("/{id}")
+    String getStore(@PathVariable Long id,
+                    Model model);
 
-    @PostMapping("/")
-    StoreViewModel saveStore();
+    @GetMapping("/create")
+    String createForm(Model model);
 
-    @DeleteMapping("/")
-    StoreViewModel deleteStore(Long id);
+    @PostMapping("/create")
+    String saveStore(@ModelAttribute StoreViewModel viewModel,
+                     Model model);
 
-    @PutMapping("/")
-    StoreViewModel updateStore();
+    @DeleteMapping("/delete/{id}")
+    String deleteStore(@PathVariable Long id);
+
+    @PutMapping("/update/{id}")
+    String updateStore(@PathVariable Long id,
+                       @ModelAttribute StoreViewModel viewModel,
+                       Model model);
 }

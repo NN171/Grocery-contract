@@ -2,25 +2,32 @@ package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.ProductViewModel;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequestMapping("api/v1/products")
 public interface ProductController extends BaseController {
 
     @GetMapping("/")
-    ProductViewModel getProducts();
+    String getProducts(@ModelAttribute ProductViewModel viewModel,
+                     Model model);
 
-    @GetMapping("/product/")
-    ProductViewModel getProduct(Long id);
+    @GetMapping("/{id}")
+    String getProduct(@PathVariable Long id,
+                    Model model);
 
-    @PostMapping("/")
-    ProductViewModel saveProduct();
+    @GetMapping("/create")
+    String createForm(Model model);
 
-    @DeleteMapping("/")
-    ProductViewModel deleteProduct(Long id);
+    @PostMapping("/create")
+    String saveProduct(@ModelAttribute ProductViewModel viewModel,
+                     Model model);
 
-    @PutMapping("/")
-    ProductViewModel updateProduct();
+    @DeleteMapping("/delete/{id}")
+    String deleteProduct(@PathVariable Long id);
+
+    @PutMapping("/update/{id}")
+    String updateProduct(@PathVariable Long id,
+                       @ModelAttribute ProductViewModel viewModel,
+                       Model model);
 }

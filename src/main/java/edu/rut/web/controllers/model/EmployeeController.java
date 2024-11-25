@@ -2,25 +2,36 @@ package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.EmployeeViewModel;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequestMapping("api/v1/employees")
 public interface EmployeeController extends BaseController {
 
     @GetMapping("/")
-    EmployeeViewModel getEmployees();
+    String getEmployees(@ModelAttribute EmployeeViewModel viewModel,
+                     Model model);
 
-    @GetMapping("/employee/")
-    EmployeeViewModel getEmployee(Long id);
+    @GetMapping("/{id}")
+    String getEmployee
+            (@PathVariable Long id,
+                    Model model);
 
-    @PostMapping("/")
-    EmployeeViewModel saveEmployee();
+    @GetMapping("/create")
+    String createForm(Model model);
 
-    @DeleteMapping("/")
-    EmployeeViewModel deleteEmployee(Long id);
+    @PostMapping("/create")
+    String saveEmployee
+            (@ModelAttribute EmployeeViewModel viewModel,
+                     Model model);
 
-    @PutMapping("/")
-    EmployeeViewModel updateEmployee();
+    @DeleteMapping("/delete/{id}")
+    String deleteEmployee
+            (@PathVariable Long id);
+
+    @PutMapping("/update/{id}")
+    String updateEmployee
+            (@PathVariable Long id,
+                       @ModelAttribute EmployeeViewModel viewModel,
+                       Model model);
 }

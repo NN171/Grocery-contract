@@ -2,25 +2,29 @@ package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.OrderViewModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("api/v1/orders")
 public interface OrderController extends BaseController {
 
     @GetMapping("/")
-    OrderViewModel getOrders();
+    String getOrders(@ModelAttribute OrderViewModel viewModel,
+                     Model model);
 
-    @GetMapping("/order/")
-    OrderViewModel getOrder(Long id);
+    @GetMapping("/{id}")
+    String getOrder(@PathVariable Long id,
+                    Model model);
 
-    @PostMapping("/")
-    OrderViewModel saveOrder();
+    @GetMapping("/create")
+    String createForm(Model model);
 
-    @PutMapping("/")
-    OrderViewModel updateOrder();
+    @PostMapping("/create")
+    String saveOrder(@ModelAttribute OrderViewModel viewModel,
+                     Model model);
+
+    @PutMapping("/update/{id}")
+    String updateOrder(@PathVariable Long id,
+                       @ModelAttribute OrderViewModel viewModel,
+                       Model model);
 }

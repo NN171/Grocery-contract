@@ -2,23 +2,32 @@ package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.CustomerViewModel;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping(path = "api/v1/customers")
 public interface CustomerController extends BaseController {
 
     @GetMapping("/")
-    CustomerViewModel getCustomers();
+    String getCustomers(@ModelAttribute CustomerViewModel viewModel,
+                     Model model);
 
-    @GetMapping("/customer/")
-    CustomerViewModel getCustomer(Long id);
+    @GetMapping("/{id}")
+    String getCustomer(@PathVariable Long id,
+                    Model model);
 
-    @PostMapping("/")
-    CustomerViewModel saveCustomer();
+    @GetMapping("/create")
+    String createForm(Model model);
 
-    @DeleteMapping("/")
-    CustomerViewModel deleteCustomer();
+    @PostMapping("/create")
+    String saveCustomer(@ModelAttribute CustomerViewModel viewModel,
+                     Model model);
 
-    @PutMapping("/")
-    CustomerViewModel updateCustomer();
+    @DeleteMapping("/delete/{id}")
+    String deleteCustomer(@PathVariable Long id);
+
+    @PutMapping("/update/{id}")
+    String updateCustomer(@PathVariable Long id,
+                       @ModelAttribute CustomerViewModel viewModel,
+                       Model model);
 }

@@ -1,6 +1,6 @@
 package edu.rut.web.controllers;
 
-import edu.rut.web.dto.BaseViewModel;
+import edu.rut.web.dto.base.BaseViewModel;
 
 /**
  * Базовый контроллер

@@ -1,4 +1,4 @@
-package edu.rut.web.dto;
+package edu.rut.web.dto.product;
 
 public record ProductViewModel() {
 }

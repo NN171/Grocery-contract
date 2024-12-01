@@ -1,7 +1,7 @@
 package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
-import edu.rut.web.dto.ProductViewModel;
+import edu.rut.web.dto.product.ProductViewModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 

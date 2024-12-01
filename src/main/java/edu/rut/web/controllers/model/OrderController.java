@@ -1,7 +1,7 @@
 package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
-import edu.rut.web.dto.OrderViewModel;
+import edu.rut.web.dto.order.OrderViewModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 

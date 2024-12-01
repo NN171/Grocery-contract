@@ -1,4 +1,4 @@
-package edu.rut.web.dto;
+package edu.rut.web.dto.employee;
 
 public record EmployeeViewModel() {
 }

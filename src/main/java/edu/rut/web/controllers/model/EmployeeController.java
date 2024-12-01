@@ -1,7 +1,7 @@
 package edu.rut.web.controllers.model;
 
 import edu.rut.web.controllers.BaseController;
-import edu.rut.web.dto.EmployeeViewModel;
+import edu.rut.web.dto.employee.EmployeeViewModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 

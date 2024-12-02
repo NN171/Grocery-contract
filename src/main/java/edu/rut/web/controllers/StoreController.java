@@ -1,11 +1,8 @@
-package edu.rut.web.controllers.model;
+package edu.rut.web.controllers;
 
-import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.store.StoreViewModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequestMapping("api/v1/stores")
 public interface StoreController extends BaseController {

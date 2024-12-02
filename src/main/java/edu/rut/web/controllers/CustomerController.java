@@ -1,6 +1,5 @@
-package edu.rut.web.controllers.model;
+package edu.rut.web.controllers;
 
-import edu.rut.web.controllers.BaseController;
 import edu.rut.web.dto.customer.CustomerViewModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

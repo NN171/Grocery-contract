@@ -1,4 +1,8 @@
 package edu.rut.web.dto.order;
 
-public record OrderViewModel() {
+import edu.rut.web.dto.base.BaseViewModel;
+
+public record OrderViewModel(
+		BaseViewModel viewModel
+) {
 }

@@ -1,4 +1,8 @@
 package edu.rut.web.dto.employee;
 
-public record EmployeeViewModel() {
+import edu.rut.web.dto.base.BaseViewModel;
+
+public record EmployeeViewModel(
+		BaseViewModel viewModel
+) {
 }

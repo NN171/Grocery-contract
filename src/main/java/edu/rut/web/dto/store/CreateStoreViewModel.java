@@ -1,4 +1,8 @@
 package edu.rut.web.dto.store;
 
-public record CreateStoreViewModel() {
+import edu.rut.web.dto.base.BaseViewModel;
+
+public record CreateStoreViewModel(
+		BaseViewModel viewModel
+) {
 }

@@ -1,6 +1,11 @@
 package edu.rut.web.dto.customer;
 
-public record EditCustomerForm(
+import jakarta.validation.constraints.NotBlank;
 
+public record EditCustomerForm(
+		@NotBlank(message = "Идентификатор обязателен") Long id,
+		@NotBlank(message = "Имя обязательно") String firstName,
+		@NotBlank(message = "Фамилия обязательна") String lastName,
+		@NotBlank(message = "Номер телефона обязателен") String phone
 ) {
 }

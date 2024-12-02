@@ -1,4 +1,11 @@
 package edu.rut.web.dto.employee;
 
-public record CreateEmployeeForm() {
+import jakarta.validation.constraints.NotBlank;
+
+public record CreateEmployeeForm(
+		@NotBlank(message = "Имя обязательно") String firstName,
+		@NotBlank(message = "Фамилия обязательна") String lastName,
+		@NotBlank(message = "Номер телефона обязателен") String phoneNumber,
+		@NotBlank(message = "Адрес обязателен") String storeAddress
+) {
 }

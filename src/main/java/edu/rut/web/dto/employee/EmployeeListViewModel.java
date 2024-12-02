@@ -1,4 +1,8 @@
 package edu.rut.web.dto.employee;
 
-public record EmployeeListViewModel() {
+import java.util.List;
+
+public record EmployeeListViewModel(
+		List<EmployeeViewModel> employeeViewModels
+) {
 }

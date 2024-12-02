@@ -1,4 +1,8 @@
 package edu.rut.web.dto.feedback;
 
-public record FeedbackViewModel() {
+import edu.rut.web.dto.base.BaseViewModel;
+
+public record FeedbackViewModel(
+		BaseViewModel viewModel
+) {
 }

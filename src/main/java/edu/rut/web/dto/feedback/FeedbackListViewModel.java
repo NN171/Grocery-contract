@@ -1,4 +1,8 @@
 package edu.rut.web.dto.feedback;
 
-public record FeedbackListViewModel() {
+import java.util.List;
+
+public record FeedbackListViewModel(
+		List<FeedbackViewModel> viewModels
+) {
 }

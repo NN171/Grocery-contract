@@ -1,4 +1,8 @@
 package edu.rut.web.dto.product;
 
-public record ProductListViewModel() {
+import java.util.List;
+
+public record ProductListViewModel(
+		List<ProductViewModel> viewModels
+) {
 }

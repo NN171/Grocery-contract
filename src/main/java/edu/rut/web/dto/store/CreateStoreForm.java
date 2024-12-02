@@ -1,4 +1,8 @@
 package edu.rut.web.dto.store;
 
-public record CreateStoreForm() {
+import jakarta.validation.constraints.NotBlank;
+
+public record CreateStoreForm(
+		@NotBlank(message = "Адрес обязателен") String address
+) {
 }

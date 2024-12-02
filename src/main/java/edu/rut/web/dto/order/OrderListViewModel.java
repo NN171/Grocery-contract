@@ -1,4 +1,8 @@
 package edu.rut.web.dto.order;
 
-public record OrderListViewModel() {
+import java.util.List;
+
+public record OrderListViewModel(
+		List<OrderViewModel> viewModels
+) {
 }

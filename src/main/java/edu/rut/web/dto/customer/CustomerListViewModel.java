@@ -1,6 +1,12 @@
 package edu.rut.web.dto.customer;
 
-public record CustomerListViewModel(
+import edu.rut.web.dto.base.BaseViewModel;
 
+import java.util.List;
+
+public record CustomerListViewModel(
+		BaseViewModel viewModel,
+		List<CustomerListViewModel> viewModelList,
+		Integer pages
 ) {
 }

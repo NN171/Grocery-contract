@@ -1,4 +1,8 @@
 package edu.rut.web.dto.product;
 
-public record ProductViewModel() {
+import edu.rut.web.dto.base.BaseViewModel;
+
+public record ProductViewModel(
+		BaseViewModel viewModel
+) {
 }

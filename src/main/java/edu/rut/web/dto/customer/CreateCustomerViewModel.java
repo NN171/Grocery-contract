@@ -1,4 +1,8 @@
 package edu.rut.web.dto.customer;
 
-public record CreateCustomerViewModel() {
+import edu.rut.web.dto.base.BaseViewModel;
+
+public record CreateCustomerViewModel(
+		BaseViewModel viewModel
+) {
 }

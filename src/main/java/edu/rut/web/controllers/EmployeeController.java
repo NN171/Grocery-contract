@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public interface EmployeeController extends BaseController {
 
 	@GetMapping("/")
-	String getEmployees(@Valid @ModelAttribute("form") EmployeeViewModel viewModel,
+	String getEmployees(@ModelAttribute("form") EmployeeViewModel viewModel,
 						Model model);
 
 	@GetMapping("/{id}")

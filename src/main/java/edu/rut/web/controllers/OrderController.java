@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public interface OrderController extends BaseController {
 
     @GetMapping("/")
-    String getOrders(@Valid @ModelAttribute("form") OrderViewModel viewModel,
+    String getOrders(@ModelAttribute("form") OrderViewModel viewModel,
                      Model model);
 
     @GetMapping("/{id}")

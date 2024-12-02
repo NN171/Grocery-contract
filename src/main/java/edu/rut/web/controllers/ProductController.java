@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface ProductController extends BaseController {
 
 	@GetMapping("/")
-	String getProducts(@Valid @ModelAttribute("form") ProductViewModel viewModel,
+	String getProducts(@ModelAttribute("form") ProductViewModel viewModel,
 					   Model model);
 
 	@GetMapping("/{id}")

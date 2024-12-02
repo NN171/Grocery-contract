@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface FeedbackController extends BaseController {
 
 	@GetMapping("/")
-	String getFeedbacks(@Valid @ModelAttribute("form") FeedbackViewModel viewModel,
+	String getFeedbacks(@ModelAttribute("form") FeedbackViewModel viewModel,
 						Model model);
 
 	@GetMapping("/{id}")

@@ -1,5 +1,6 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.customer.CustomerSearchForm;
 import edu.rut.web.dto.customer.CustomerViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(path = "api/v1/customers")
+@RequestMapping(path = "/customers")
 public interface CustomerController extends BaseController {
 
 	@GetMapping("/")
-	String getCustomers(@ModelAttribute("form") CustomerViewModel viewModel,
+	String getCustomers(@ModelAttribute("form") CustomerSearchForm form,
 						Model model);
 
 	@GetMapping("/{id}")

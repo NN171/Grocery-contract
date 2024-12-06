@@ -1,5 +1,6 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.product.ProductSearchForm;
 import edu.rut.web.dto.product.ProductViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("api/v1/products")
+@RequestMapping("/products")
 public interface ProductController extends BaseController {
 
 	@GetMapping("/")
-	String getProducts(@ModelAttribute("form") ProductViewModel viewModel,
+	String getProducts(@ModelAttribute("form") ProductSearchForm form,
 					   Model model);
 
 	@GetMapping("/{id}")

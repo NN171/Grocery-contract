@@ -1,5 +1,6 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.store.StoreSearchForm;
 import edu.rut.web.dto.store.StoreViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("api/v1/stores")
+@RequestMapping("/stores")
 public interface StoreController extends BaseController {
 
 	@GetMapping("/")
-	String getStores(@ModelAttribute("form") StoreViewModel viewModel,
+	String getStores(@ModelAttribute("form") StoreSearchForm form,
 					 Model model);
 
 	@GetMapping("/{id}")

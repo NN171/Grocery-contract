@@ -1,15 +1,16 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.employee.EmployeeSearchForm;
 import edu.rut.web.dto.employee.EmployeeViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("api/v1/employees")
+@RequestMapping("/employees")
 public interface EmployeeController extends BaseController {
 
 	@GetMapping("/")
-	String getEmployees(@ModelAttribute("form") EmployeeViewModel viewModel,
+	String getEmployees(@ModelAttribute("form") EmployeeSearchForm form,
 						Model model);
 
 	@GetMapping("/{id}")

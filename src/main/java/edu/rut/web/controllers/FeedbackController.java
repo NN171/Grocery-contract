@@ -1,5 +1,6 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.feedback.FeedbackSearchForm;
 import edu.rut.web.dto.feedback.FeedbackViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("api/v1/feedbacks")
+@RequestMapping("/feedbacks")
 public interface FeedbackController extends BaseController {
 
 	@GetMapping("/")
-	String getFeedbacks(@ModelAttribute("form") FeedbackViewModel viewModel,
+	String getFeedbacks(@ModelAttribute("form") FeedbackSearchForm form,
 						Model model);
 
 	@GetMapping("/{id}")

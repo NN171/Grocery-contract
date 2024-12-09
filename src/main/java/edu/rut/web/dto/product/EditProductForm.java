@@ -7,6 +7,8 @@ public record EditProductForm(
 		@NotBlank(message = "Идентификатор обязателен") Long id,
 		@NotBlank(message = "Название обязательно") String name,
 		@NotBlank(message = "Цена обязательна") @DecimalMin("0") double price,
-		@NotBlank(message = "Количество обязательно") Integer amount
+		@NotBlank(message = "Количество обязательно") Integer amount,
+		@NotBlank(message = "Дата изготовления обязательна") String creationDate,
+		@NotBlank(message = "Дата окончания срока годности обязательна") String expiryDate
 ) {
 }

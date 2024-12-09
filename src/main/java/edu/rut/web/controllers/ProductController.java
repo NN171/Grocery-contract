@@ -1,9 +1,12 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.product.CreateProductForm;
+import edu.rut.web.dto.product.EditProductForm;
 import edu.rut.web.dto.product.ProductSearchForm;
 import edu.rut.web.dto.product.ProductViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,15 +22,12 @@ public interface ProductController extends BaseController {
 	String getProducts(@ModelAttribute("form") ProductSearchForm form,
 					   Model model);
 
-	@GetMapping("/{id}")
-	String getProduct(@PathVariable Long id,
-					  Model model);
-
 	@GetMapping("/create")
 	String createForm(Model model);
 
 	@PostMapping("/create")
-	String saveProduct(@Valid @ModelAttribute("form") ProductViewModel viewModel,
+	String saveProduct(@Valid @ModelAttribute("form") CreateProductForm form,
+					   BindingResult bindingResult,
 					   Model model);
 
 	@DeleteMapping("/delete/{id}")
@@ -35,6 +35,11 @@ public interface ProductController extends BaseController {
 
 	@PutMapping("/update/{id}")
 	String updateProduct(@PathVariable Long id,
-						 @Valid @ModelAttribute("form") ProductViewModel viewModel,
+						 @Valid @ModelAttribute("form") EditProductForm form,
+						 BindingResult bindingResult,
 						 Model model);
+
+	@GetMapping("/update/{id}")
+	String updateForm(@PathVariable Long id,
+					  Model model);
 }

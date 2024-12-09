@@ -1,10 +1,13 @@
 package edu.rut.web.dto.order;
 
-import edu.rut.web.dto.product.ProductViewModel;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
 public record CreateOrderForm(
-		List<ProductViewModel> productViewModels
+		@Min(0L) Long customerId,
+		@Min(0L) Long employeeId,
+		@NotEmpty List<AddProductForm> productList
 ) {
 }

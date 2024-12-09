@@ -1,9 +1,12 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.feedback.CreateFeedbackForm;
+import edu.rut.web.dto.feedback.EditFeedbackForm;
 import edu.rut.web.dto.feedback.FeedbackSearchForm;
 import edu.rut.web.dto.feedback.FeedbackViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,15 +22,12 @@ public interface FeedbackController extends BaseController {
 	String getFeedbacks(@ModelAttribute("form") FeedbackSearchForm form,
 						Model model);
 
-	@GetMapping("/{id}")
-	String getFeedback(@PathVariable Long id,
-					   Model model);
-
 	@GetMapping("/create")
 	String createForm(Model model);
 
 	@PostMapping("/create")
-	String saveFeedback(@Valid @ModelAttribute("form") FeedbackViewModel viewModel,
+	String saveFeedback(@Valid @ModelAttribute("form") CreateFeedbackForm form,
+						BindingResult bindingResult,
 						Model model);
 
 	@DeleteMapping("/delete/{id}")
@@ -35,6 +35,11 @@ public interface FeedbackController extends BaseController {
 
 	@PutMapping("/update/{id}")
 	String updateFeedback(@PathVariable Long id,
-						  @Valid @ModelAttribute("form") FeedbackViewModel viewModel,
+						  @Valid @ModelAttribute("form") EditFeedbackForm form,
+						  BindingResult bindingResult,
 						  Model model);
+
+	@GetMapping("/update/{id}")
+	String updateForm(@PathVariable Long id,
+					  Model model);
 }

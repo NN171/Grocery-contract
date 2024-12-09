@@ -2,7 +2,6 @@ package edu.rut.web.controllers;
 
 import edu.rut.web.dto.customer.CreateCustomerForm;
 import edu.rut.web.dto.customer.CustomerSearchForm;
-import edu.rut.web.dto.customer.CustomerViewModel;
 import edu.rut.web.dto.customer.EditCustomerForm;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
@@ -26,7 +25,7 @@ public interface CustomerController extends BaseController {
 	String createForm(Model model);
 
 	@PostMapping("/create")
-	String saveCustomer(@Valid @ModelAttribute("form")CreateCustomerForm form,
+	String saveCustomer(@Valid @ModelAttribute("form") CreateCustomerForm form,
 						BindingResult bindingResult,
 						Model model);
 

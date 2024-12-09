@@ -1,8 +1,12 @@
 package edu.rut.web.dto.employee;
 
+import edu.rut.web.dto.base.BaseViewModel;
+
 import java.util.List;
 
 public record EmployeeListViewModel(
-		List<EmployeeViewModel> employeeViewModels
+		BaseViewModel viewModel,
+		List<EmployeeViewModel> employeeViewModels,
+		Integer pages
 ) {
 }

@@ -1,9 +1,12 @@
 package edu.rut.web.controllers;
 
+import edu.rut.web.dto.store.CreateStoreForm;
+import edu.rut.web.dto.store.EditStoreForm;
 import edu.rut.web.dto.store.StoreSearchForm;
 import edu.rut.web.dto.store.StoreViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,15 +22,12 @@ public interface StoreController extends BaseController {
 	String getStores(@ModelAttribute("form") StoreSearchForm form,
 					 Model model);
 
-	@GetMapping("/{id}")
-	String getStore(@PathVariable Long id,
-					Model model);
-
 	@GetMapping("/create")
 	String createForm(Model model);
 
 	@PostMapping("/create")
-	String saveStore(@Valid @ModelAttribute("form") StoreViewModel viewModel,
+	String saveStore(@Valid @ModelAttribute("form") CreateStoreForm form,
+					 BindingResult bindingResult,
 					 Model model);
 
 	@DeleteMapping("/delete/{id}")
@@ -35,6 +35,11 @@ public interface StoreController extends BaseController {
 
 	@PutMapping("/update/{id}")
 	String updateStore(@PathVariable Long id,
-					   @Valid @ModelAttribute("form") StoreViewModel viewModel,
+					   @Valid @ModelAttribute("form") EditStoreForm form,
+					   BindingResult bindingResult,
 					   Model model);
+
+	@GetMapping("/update/{id}")
+	String updateForm(@PathVariable Long id,
+					  Model model);
 }

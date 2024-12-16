@@ -5,6 +5,8 @@ import edu.rut.web.dto.feedback.EditFeedbackForm;
 import edu.rut.web.dto.feedback.FeedbackSearchForm;
 import edu.rut.web.dto.feedback.FeedbackViewModel;
 import jakarta.validation.Valid;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,9 +20,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/feedbacks")
 public interface FeedbackController extends BaseController {
 
-	@GetMapping("/")
+	@GetMapping("/{productId}")
 	String getFeedbacks(@ModelAttribute("form") FeedbackSearchForm form,
-						Model model);
+						Model model,
+						@PathVariable Long productId);
 
 	@GetMapping("/create")
 	String createForm(Model model);
@@ -28,7 +31,8 @@ public interface FeedbackController extends BaseController {
 	@PostMapping("/create")
 	String saveFeedback(@Valid @ModelAttribute("form") CreateFeedbackForm form,
 						BindingResult bindingResult,
-						Model model);
+						Model model,
+						@AuthenticationPrincipal UserDetails userDetails);
 
 	@DeleteMapping("/delete/{id}")
 	String deleteFeedback(@PathVariable Long id);

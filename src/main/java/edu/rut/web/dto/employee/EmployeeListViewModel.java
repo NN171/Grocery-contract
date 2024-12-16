@@ -7,6 +7,7 @@ import java.util.List;
 public record EmployeeListViewModel(
 		BaseViewModel viewModel,
 		List<EmployeeViewModel> employeeViewModels,
-		Integer pages
+		Integer page,
+		Integer totalPages
 ) {
 }

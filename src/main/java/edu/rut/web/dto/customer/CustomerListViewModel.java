@@ -7,6 +7,7 @@ import java.util.List;
 public record CustomerListViewModel(
 		BaseViewModel viewModel,
 		List<CustomerViewModel> viewModelList,
-		Integer pages
+		Integer page,
+		Integer totalPages
 ) {
 }

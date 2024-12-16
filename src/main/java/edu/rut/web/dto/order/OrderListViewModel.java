@@ -8,6 +8,7 @@ import java.util.List;
 public record OrderListViewModel(
 		BaseViewModel viewModel,
 		List<OrderViewModel> orderViewModels,
-		Integer pages
+		Integer page,
+		Integer totalPages
 ) {
 }

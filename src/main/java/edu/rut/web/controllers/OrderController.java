@@ -16,9 +16,9 @@ public interface OrderController extends BaseController {
     String getOrders(@ModelAttribute("form") OrderSearchForm form,
                      Model model);
 
-    @GetMapping("/{id}")
-    String getOrder(@PathVariable Long id,
-                    Model model);
+//    @GetMapping("/{id}")
+//    String getOrder(@PathVariable Long id,
+//                    Model model);
 
     @GetMapping("/create")
     String createForm(Model model);

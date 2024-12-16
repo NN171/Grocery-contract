@@ -7,7 +7,7 @@ public record EmployeeViewModel(
 		Long id,
 		String firstName,
 		String lastName,
-		String phoneNumber,
+		String phone,
 		String storeAddress,
 		OrderListViewModel orderViewModels
 ) {

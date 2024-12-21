@@ -5,6 +5,7 @@ public record FeedbackViewModel(
 		Integer rating,
 		String comment,
 		String date,
+		Long productId,
 		String customerName
 ) {
 }

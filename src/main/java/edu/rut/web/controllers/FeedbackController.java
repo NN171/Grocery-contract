@@ -41,7 +41,8 @@ public interface FeedbackController extends BaseController {
 	String updateFeedback(@PathVariable Long id,
 						  @Valid @ModelAttribute("form") EditFeedbackForm form,
 						  BindingResult bindingResult,
-						  Model model);
+						  Model model,
+						  @AuthenticationPrincipal UserDetails userDetails);
 
 	@GetMapping("/update/{id}")
 	String updateForm(@PathVariable Long id,

@@ -25,14 +25,16 @@ public interface FeedbackController extends BaseController {
 						Model model,
 						@PathVariable Long productId);
 
-	@GetMapping("/create")
-	String createForm(Model model);
+	@GetMapping("/create/{productId}")
+	String createForm(Model model,
+					  @PathVariable Long productId);
 
-	@PostMapping("/create")
+	@PostMapping("/create/{productId}")
 	String saveFeedback(@Valid @ModelAttribute("form") CreateFeedbackForm form,
 						BindingResult bindingResult,
 						Model model,
-						@AuthenticationPrincipal UserDetails userDetails);
+						@AuthenticationPrincipal UserDetails userDetails,
+						@PathVariable Long productId);
 
 	@DeleteMapping("/delete/{id}")
 	String deleteFeedback(@PathVariable Long id);

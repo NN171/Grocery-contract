@@ -5,6 +5,8 @@ import edu.rut.web.dto.order.EditOrderForm;
 import edu.rut.web.dto.order.OrderSearchForm;
 import edu.rut.web.dto.order.OrderViewModel;
 import jakarta.validation.Valid;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +18,15 @@ public interface OrderController extends BaseController {
     String getOrders(@ModelAttribute("form") OrderSearchForm form,
                      Model model);
 
-//    @GetMapping("/{id}")
-//    String getOrder(@PathVariable Long id,
-//                    Model model);
+    @GetMapping("/add")
+    String addProduct(@RequestParam Long productId,
+                      @RequestParam int quantity,
+                      Model model,
+                      @AuthenticationPrincipal UserDetails userDetails);
+
+    @GetMapping("/order")
+    String getOrder(Model model,
+                    @AuthenticationPrincipal UserDetails userDetails);
 
     @GetMapping("/create")
     String createForm(Model model);
@@ -28,13 +36,4 @@ public interface OrderController extends BaseController {
                      BindingResult bindingResult,
                      Model model);
 
-    @PutMapping("/update/{id}")
-    String updateOrder(@PathVariable Long id,
-                       @Valid @ModelAttribute("form") EditOrderForm form,
-                       BindingResult bindingResult,
-                       Model model);
-
-    @GetMapping("/update/{id}")
-    String updateForm(@PathVariable Long id,
-                      Model model);
 }

@@ -1,7 +1,5 @@
 package edu.rut.web.dto.order;
 
-import edu.rut.web.dto.base.BaseViewModel;
-import edu.rut.web.dto.product.ProductListViewModel;
 import edu.rut.web.dto.productOrder.ProductOrderViewModel;
 
 import java.util.List;

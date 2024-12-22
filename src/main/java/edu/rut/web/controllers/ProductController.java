@@ -3,7 +3,6 @@ package edu.rut.web.controllers;
 import edu.rut.web.dto.product.CreateProductForm;
 import edu.rut.web.dto.product.EditProductForm;
 import edu.rut.web.dto.product.ProductSearchForm;
-import edu.rut.web.dto.product.ProductViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

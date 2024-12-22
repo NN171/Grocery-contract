@@ -1,6 +1,5 @@
 package edu.rut.web.dto.store;
 
-import edu.rut.web.dto.base.BaseViewModel;
 import edu.rut.web.dto.employee.EmployeeListViewModel;
 
 public record StoreViewModel(

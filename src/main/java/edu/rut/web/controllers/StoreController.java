@@ -3,7 +3,6 @@ package edu.rut.web.controllers;
 import edu.rut.web.dto.store.CreateStoreForm;
 import edu.rut.web.dto.store.EditStoreForm;
 import edu.rut.web.dto.store.StoreSearchForm;
-import edu.rut.web.dto.store.StoreViewModel;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

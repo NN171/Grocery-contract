@@ -1,6 +1,5 @@
 package edu.rut.web.dto.product;
 
-import edu.rut.web.dto.base.BaseViewModel;
 import edu.rut.web.dto.feedback.FeedbackListViewModel;
 
 public record ProductViewModel(

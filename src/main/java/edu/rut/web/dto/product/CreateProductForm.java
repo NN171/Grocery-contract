@@ -1,6 +1,5 @@
 package edu.rut.web.dto.product;
 
-import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 

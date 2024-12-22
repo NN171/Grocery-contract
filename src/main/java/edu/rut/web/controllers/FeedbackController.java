@@ -3,7 +3,6 @@ package edu.rut.web.controllers;
 import edu.rut.web.dto.feedback.CreateFeedbackForm;
 import edu.rut.web.dto.feedback.EditFeedbackForm;
 import edu.rut.web.dto.feedback.FeedbackSearchForm;
-import edu.rut.web.dto.feedback.FeedbackViewModel;
 import jakarta.validation.Valid;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;

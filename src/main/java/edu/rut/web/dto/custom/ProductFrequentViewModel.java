@@ -1,10 +1,12 @@
 package edu.rut.web.dto.custom;
 
+import java.time.LocalDate;
+
 public record ProductFrequentViewModel(
 		String name,
 		double price,
-		String prodDate,
-		String expiryDate,
+		LocalDate prodDate,
+		LocalDate expiryDate,
 		double avgRating
 ) {
 }

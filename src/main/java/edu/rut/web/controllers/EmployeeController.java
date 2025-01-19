@@ -17,23 +17,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/employees")
 public interface EmployeeController extends BaseController {
 
+	/**
+	 * Получение страницы сотрудников
+	 */
 	@GetMapping("/")
 	String getEmployees(@ModelAttribute("form") EmployeeSearchForm form,
 						Model model);
 
+	/**
+	 * Форма создания сотрудника
+	 */
 	@GetMapping("/create")
 	String createForm(Model model);
 
+	/**
+	 * Создание сотрудника
+	 */
 	@PostMapping("/create")
 	String saveEmployee
 			(@Valid @ModelAttribute("form") CreateEmployeeForm form,
 			 BindingResult bindingResult,
 			 Model model);
 
+	/**
+	 * Удаление сотрудника
+	 */
 	@DeleteMapping("/delete/{id}")
 	String deleteEmployee
 			(@PathVariable Long id);
 
+	/**
+	 * Изменение сотрудника
+	 */
 	@PutMapping("/update/{id}")
 	String updateEmployee
 			(@PathVariable Long id,
@@ -41,6 +56,9 @@ public interface EmployeeController extends BaseController {
 			 BindingResult bindingResult,
 			 Model model);
 
+	/**
+	 * Форма для изменения сотрудника
+	 */
 	@GetMapping("/update/{id}")
 	String updateForm(@PathVariable Long id,
 					  Model model);
